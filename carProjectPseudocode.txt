@@ -39,3 +39,11 @@ IF user selection is 3, then:
   
 IF user selection is none of the above, then:
   Dispaly a message notifying user of invalid input. Redirect to menu for proper input.
+  
+  
+def dictionaryMethod(item) :
+
+  price += myDict[item]
+  return price
+  
+  
