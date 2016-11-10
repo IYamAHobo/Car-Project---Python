@@ -32,3 +32,10 @@ IF user selection is 1, then:
     # Continue creating pseudocode here.
     
 If user selection is 2, then:
+  # Continue creating pseudocode here.
+
+IF user selection is 3, then:
+  Exit the program.
+  
+IF user selection is none of the above, then:
+  Dispaly a message notifying user of invalid input. Redirect to menu for proper input.
