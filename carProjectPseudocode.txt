@@ -1,5 +1,7 @@
 PSEUDOCODE:
 
-Check to see if the a file has already been writen for the program.
+Display a "Welcome" message to begin the program.
+
+Check to see if a file already exists and can be read for information.
 If no file exists, then create the file.
 
