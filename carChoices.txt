@@ -8,30 +8,30 @@ Car Models:
 
 Chrysalis:
 
-- Highwayman
+- Highwayman ($40000)
 // It's a two-door muscle car evocative of a 50s design.
-- Rangemaster
+- Rangemaster ($20000)
 // An old, beat-down pickup.
-- Pinto
+- Pinto ($15000)
 // You know what this is.
 
 
 Insignia:
-- Hemoglobin
+- Hemoglobin ($35000)
 // You can have your Hemoglobin in any color you want, so long as that color is red.
-- PX4
-- Misage
+- PX4 ($65000)
+- Misage ($70000)
 // A sporty coup.
 
 Joplin:
-- Phenidate
+- Phenidate ($50000)
 // This totally isn't a drug reference.
-- PCP GT
-- Muriatic - Limited Supply Drive
+- PCP GT500 ($75000)
+- Muriatic - Limited Supply Drive ($80000)
 
 
 
 Options:
-- Invisible Headlights
-- Hydraulics
-- Prescription Windshield (Custom Orders Only)
+- Invisible Headlights ($500)
+- Hydraulics ($4000)
+- Prescription Windshield (Custom Orders Only) ($500)
