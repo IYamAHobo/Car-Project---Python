@@ -124,3 +124,9 @@ def priceCalculator(item) :
   return price
   
   
+def getOptions() :
+
+print(options)
+
+if (option is selected):
+  price += myDict[selectedOption]
