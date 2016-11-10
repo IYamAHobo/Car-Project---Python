@@ -2,8 +2,9 @@ PSEUDOCODE:
 
 Display a "Welcome" message to begin the program.
 
-Check to see if a file already exists and can be read for information.
-If no file exists, then create the file.
+Try to see if a file already exists and can be read for information.
+  If the file does exist, read the information within the file.
+If no file exists, circumvent the read file error by creating a file.
 
 Create a menu for users to interact with:
 Display a message asking for user's to make a selection from the menu
@@ -11,3 +12,7 @@ Display option 1, to create a car order
 Display option 2, to see the order
 Display option 3, exit program
 
+Check to see if user input can be turned into an integer.
+If not, ask user to reinput their selection as a number that corresponds with one of the options.
+
+# Now start the car selection process
