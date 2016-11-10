@@ -1,0 +1,37 @@
+Car Brands:
+
+- Chrysalis
+- Insignia
+- Joplin
+
+Car Models:
+
+Chrysalis:
+
+- Highwayman
+// It's a two-door muscle car evocative of a 50s design.
+- Rangemaster
+// An old, beat-down pickup.
+- Rocket
+// A 
+
+
+Insignia:
+- Hemoglobin
+// You can have your Hemoglobin in any color you want, so long as that color is red.
+- PX4
+- Misage
+// A sporty coup.
+
+Joplin:
+- Phenidate
+// This totally isn't a drug reference.
+- PCP GT
+- Muriatic - Limited Supply Drive
+
+
+
+Options:
+- Invisible Headlights
+- Hydraulics
+- Prescription Windshield (Custom Orders Only)
