@@ -1,1 +1,5 @@
-STUFF
+PSEUDOCODE:
+
+Check to see if the a file has already been writen for the program.
+If no file exists, then create the file.
+
