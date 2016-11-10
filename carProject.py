@@ -18,6 +18,7 @@ def main():
   print("1) Place an order")
   print("2) See your order")
   print("3) Exit program")
+
   
   try:
     mainSelect = int(input())
