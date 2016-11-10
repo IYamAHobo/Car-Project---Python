@@ -4,16 +4,28 @@ FILE = FILEPATH
 
 The MAIN function:
   
+  chrysallis dictionary = 
+  
+  Insignia dictionary = 
+  
+  Joplin dictionary = 
   
   isInProgram = A variable that keeps the program running, even after exception handling of possible errors.
     Start program with variable being "TRUE"
-  isPlacingOrder = A variable that if the user needs to place an order or not.
+  
+  isPlacingOrder = A variable that shows if the user needs to place an order or not.
     Start program with variable being "FALSE"
+  isPickingBrand = A variable that shows if the user is picking a car brand.
+    Start program with variable as "FALSE"
+  isPickingModel = A variable that show if the user is picking a car model
+    Start program with variable as "FALSE"
+  isPickingAccessory = A variable that show if the user is picking a car accessory
+    Start program with variable as "FALSE"
   
   # WHILE LOOP FOR THE MENU AND USER INPUT.
   While the isInPRogram variable is true:
       Display a "Welcome" message to begin the program.
-    Try to:
+    TRY to:
       Open file in read mode.
       Display information in the file.
     Error exception: #An error will occur if there is no file already.
@@ -25,7 +37,7 @@ The MAIN function:
     Display option 2, to see the ordeT
     Display option 3, exit program
 
-    Try to:
+    TRY to:
       Turn user input "mainSelect" into an integer.
     Error exception:
       If error is created, ask user to reinput their selection as a number that corresponds with one of the options.
@@ -34,7 +46,7 @@ The MAIN function:
     # Now start the car selection process
     IF "mainSelect" is 1, then:
       The varaible "isPlacingOrder" value is now "TRUE"
-    WHILE the variable "isPlacingOrder" is "TRUE":
+    WHILE the variable "isPlacingOrder" is set to "TRUE":
       # Continue creating pseudocode here.
       Ask for user to input name.
       Display car brand options:
@@ -42,20 +54,54 @@ The MAIN function:
         Display option 2, Insignia
         Display option 3, Joplin
         
-        Try to:
+        TRY to:
           Turn user input "brandSelect" into an integer.
-         Error exception:
+        Error exception:
           If error is created, ask user to reinput their selection with a number that corresponds to one of the options.
-          # How to force user back to "brandSelect" input?
+          Will bring user back to menu at the top of this WHILE LOOP.
         
         If brandSelect is 1:
-          Display model options
+          The variable "isPickingModel" is set to "TRUE"
+          WHILE "isPickingModel" is "TRUE":
+            Display Chrysallis models:
+            Display option 1, Highwayman + Price
+            Display option 2, Rangemaster + Price
+            Display option 3, Pinto + Price
+            
+            TRY to:
+              Turn user input "modelSelect" into an integer.
+            Error exception:
+              If error, ask user to reinput their selection with a number that corresponds with one of the options.
+              Will bring user back to Chysallis models menu at top of this WHILE loop.
+             
          
         If brandSelect is 2:
-          Display model options
+          The variable "isPickingModel" is set to "TRUE"
+          WHILE "isPickingModel" is "TRUE":
+            Display Insignia models:
+            Display option 1, Hemoglobin + Price
+            Display option 2, PX4 + Price
+            Display option 3, Misage + Price
+            
+            TRY to:
+              Turn user input "modelSelect" into an integer.
+            Error exception:
+              If error, ask user to reinput their selection with a number that corresponds with one of the options.
+              Will bring user back to Insignia models menu at top of this WHILE loop.
           
         IF brandSelect is 3:
-          Display model options
+          The variable "isPickingModel" is set to "TRUE"
+          WHILE "isPickingModel" is "TRUE":
+            Display Joplin models:
+            Display option 1, Phenidate + Price
+            Display option 2, PCP GT + Price
+            Display option 3, Muriatic + Price
+            
+            TRY to:
+              Turn user input "modelSelect" into an integer.
+            Error exception:
+              If error, ask user to reinput their selection with a number that corresponds with one of the options.
+              Will bring user back to Joplin models menu at top of this WHILE loop.
     
     If "mainSelect" is 2, then:
       # Continue creating pseudocode here.
