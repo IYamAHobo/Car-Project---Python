@@ -67,6 +67,7 @@ The MAIN function:
             Display option 1, Highwayman + Price
             Display option 2, Rangemaster + Price
             Display option 3, Pinto + Price
+              Call Options Function
             
             TRY to:
               Turn user input "modelSelect" into an integer.
@@ -82,6 +83,7 @@ The MAIN function:
             Display option 1, Hemoglobin + Price
             Display option 2, PX4 + Price
             Display option 3, Misage + Price
+               Call Options Function
             
             TRY to:
               Turn user input "modelSelect" into an integer.
@@ -96,6 +98,7 @@ The MAIN function:
             Display option 1, Phenidate + Price
             Display option 2, PCP GT + Price
             Display option 3, Muriatic + Price
+              Call Options Function
             
             TRY to:
               Turn user input "modelSelect" into an integer.
