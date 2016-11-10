@@ -1,12 +1,22 @@
-PSEUDOCODE:
+====PSEUDOCODE====
 
-Display a "Welcome" message to begin the program.
+FILE = FILEPATH
 
-Try to see if a file already exists and can be read for information.
-  If the file does exist, read the information within the file.
-If no file exists, circumvent the read file error by creating a file.
+The main function:
+  isInProgram = A variable that shows if a file already exists for the program.
+    Start program with variable being "TRUE"
+  isPlacingOrder = A variable that if the user needs to place an order or not.
+    Start program with variable being "FALSE"
+  
+  While the isInPRogram variable is true:
+    Display a "Welcome" message to begin the program.
+  Try to:
+    Open file in read mode.
+    Display information in the file.
+  Error exception: #An error will occur if there is no file already.
+    If no file exists, circumvent the read file error by creating a file.
 
-Create a menu for users to interact with:
+Show a menu for users to interact with:
 Display a message asking for user's to make a selection from the menu
 Display option 1, to create a car order
 Display option 2, to see the order
@@ -16,3 +26,9 @@ Check to see if user input can be turned into an integer.
 If not, ask user to reinput their selection as a number that corresponds with one of the options.
 
 # Now start the car selection process
+IF user selection is 1, then:
+  The varaible "isPlacingOrder" value is now "TRUE"
+  WHILE the variable "isPlacingOrder" is "TRUE":
+    # Continue creating pseudocode here.
+    
+If user selection is 2, then:
