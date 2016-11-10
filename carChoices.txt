@@ -12,8 +12,8 @@ Chrysalis:
 // It's a two-door muscle car evocative of a 50s design.
 - Rangemaster
 // An old, beat-down pickup.
-- Rocket
-// A 
+- Pinto
+// You know what this is.
 
 
 Insignia:
