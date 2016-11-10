@@ -9,6 +9,7 @@ def main():
   print("Welcome to the car program.")
   try:
     f = open(FILE, "r")
+    f.readline()
   except:
     print("You need to make a new file. Creating...")
     f = open(FILE, "r+")
