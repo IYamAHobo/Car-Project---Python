@@ -2,46 +2,57 @@
 
 FILE = FILEPATH
 
-The main function:
-  isInProgram = A variable that shows if a file already exists for the program.
+The MAIN function:
+  
+  
+  isInProgram = A variable that keeps the program running, even after exception handling of possible errors.
     Start program with variable being "TRUE"
   isPlacingOrder = A variable that if the user needs to place an order or not.
     Start program with variable being "FALSE"
   
+  # WHILE LOOP FOR THE MENU AND USER INPUT.
   While the isInPRogram variable is true:
-    Display a "Welcome" message to begin the program.
-  Try to:
-    Open file in read mode.
-    Display information in the file.
-  Error exception: #An error will occur if there is no file already.
-    If no file exists, circumvent the read file error by creating a file.
+      Display a "Welcome" message to begin the program.
+    Try to:
+      Open file in read mode.
+      Display information in the file.
+    Error exception: #An error will occur if there is no file already.
+      If no file exists, circumvent the read file error by creating a file.
 
-Show a menu for users to interact with:
-Display a message asking for user's to make a selection from the menu
-Display option 1, to create a car order
-Display option 2, to see the order
-Display option 3, exit program
+    # Show a menu for users to interact with:
+    Display a message asking for user's to make a selection from the menu
+    Display option 1, to create a car order
+    Display option 2, to see the order
+    Display option 3, exit program
 
-Check to see if user input can be turned into an integer.
-If not, ask user to reinput their selection as a number that corresponds with one of the options.
+    Try to:
+      Turn user input into an integer.
+    Error exception:
+      If error is created, ask user to reinput their selection as a number that corresponds with one of the options.
+      # Will bounce to beginning of the while loop.
 
-# Now start the car selection process
-IF user selection is 1, then:
-  The varaible "isPlacingOrder" value is now "TRUE"
-  WHILE the variable "isPlacingOrder" is "TRUE":
-    # Continue creating pseudocode here.
+    # Now start the car selection process
+    IF user selection is 1, then:
+      The varaible "isPlacingOrder" value is now "TRUE"
+    WHILE the variable "isPlacingOrder" is "TRUE":
+      # Continue creating pseudocode here.
     
-If user selection is 2, then:
-  # Continue creating pseudocode here.
+    If user selection is 2, then:
+      # Continue creating pseudocode here.
 
-IF user selection is 3, then:
-  Exit the program.
+    IF user selection is 3, then:
+      Exit the program.
   
-IF user selection is none of the above, then:
-  Dispaly a message notifying user of invalid input. Redirect to menu for proper input.
+    IF user selection is none of the above, then:
+      Dispaly a message notifying user of invalid input. Should start while loop over and redirect user to the main menu.
   
-  
-def dictionaryMethod(item) :
+END OF MAIN FUNCTION  
+
+
+==LIST OF ANY FUNCTIONS NEEDED:==
+
+# Function used to receive and add together price values from car model and car accessories dictionary.
+def priceCalculator(item) :
 
   price += myDict[item]
   return price
