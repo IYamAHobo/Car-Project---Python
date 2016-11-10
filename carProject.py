@@ -8,8 +8,11 @@ def main():
     f = open(FILE, "r")
   except:
     print("You need to make a new file. Creating...")
-    f = open(FILE, "w")
+    f = open(FILE, "r+")
   
-  
+  print("Please select your option:")
+  print("1) Place an order")
+  print("2) See your order")
+  print("3) Exit program")
   
 main()
