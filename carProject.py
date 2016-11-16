@@ -31,8 +31,68 @@ def main():
     while (isPlacingOrder == True) :
       # Print your options for each car here.
       # This will be where all the options, makers, and models will be chosen and displayed.
-        Print(
-  if (mainSelect == 2) :
+        print("Brands")
+        print(''' 
+        1.) Chrysalis
+        2.) Insignia
+        3.) Joplin''')
+        try:
+          myBrand = int(input("Please select a Brand. (1-3)"))
+        except Value Error as e:
+          print("Oops, Something Went Wrong: Select one of the Brands (1-3)", e)
+        
+        
+        if(myBrand == 1):
+          brand = "Chrysalis"
+          print(brand, " has three different makes select one.")
+          print("1.)Highwayman ($40000) It's a two-door muscle car evocative of a 50s design.")
+          print("2.)Rangemaster ($20000) An old, beat-down pickup.")
+          print("3.)Pinto ($15000) You know what this is.")
+      
+          try:              
+            myMake = int(input("Please select a make. (1-3)"))
+          except ValueError as e:
+            print(e)
+            
+          if (myMake == 1):
+            myMake = "Highwayman"
+          elif(myMake == 2):
+            myMake = "RangeMaster"
+          elif(myMake == 3):
+            myMake = "Pinto"
+          print(" You chose a(n)", Chrysalis,":", myMake)
+         
+         elif(myBrand == 2):
+          brand = "Insignia"
+          print(brand, " has three different makes select one.")
+          print("1.)Hemoglobin ($35000) You can have your Hemoglobin in any color you want, so long as that color is red.")
+          print("2.)PX4 ($65000)")
+          print("3.)Misage ($70000) A sporty coup.")
+                
+           try:              
+            myMake = int(input("Please select a make. (1-3)"))
+          except ValueError as e:
+            print(e)
+            
+          if (myMake == 1):
+            myMake = "Hemoglobin"
+          elif(myMake == 2):
+            myMake = "PX4"
+          elif(myMake == 3):
+            myMake = "Misage"
+          print(" You chose a(n)", brand,":", myMake)
+         
+        elif(myBrand == 3):
+          brand = "Joplin"
+          print(brand, " has three different makes select one.")
+          print("1.)Phenidate ($50000) This totally isn't a drug reference.")
+          print("PCP GT500 XXX 30cc 12V 3rd Edition ($75000)")
+          print("Muriatic - Limited Supply Drive ($80000)")
+          
+        elif(myBrand < 1 or myBrand > 3):
+            raise ValueError = ("Your option have to be 1,2, or 3.")
+          
+ if (mainSelect == 2) :
       # Read the file in this section.
       # Print out the contents of the file, and then close the file.
       
