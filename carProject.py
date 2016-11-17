@@ -1,4 +1,6 @@
 # We'll use this as the main file we use for the program.
+# import os
+# You can use os.system("clear") to clear the screen on the program.
 FILE = "Insert filepath here"
 def main():
 
@@ -27,7 +29,17 @@ def main():
     
   # THE CAR SELECTION CODE STARTS HERE
   if (mainSelect == 1) :
-    isPlacingOrder = True
+    if (f.readline() != null or f.readline() != ""):
+      try: 
+        overwrite= int(input("Order already exists. Overwrite file? (1. Yes, 2. No)\n")
+      except TypeError :
+        print("Error, invalid input was selected. Please enter a number corresponding to the option.")
+      if (overwrite == 1):
+        isPlacingOrder = True
+      elif (overwrite == 2):
+        return null
+      else :
+        print("Invalid input. Please enter a number corresponding to the option.")
     while (isPlacingOrder == True) :
       # Print your options for each car here.
       # This will be where all the options, makers, and models will be chosen and displayed.
