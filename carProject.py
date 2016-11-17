@@ -95,8 +95,15 @@ def main():
  if (mainSelect == 2) :
       # Read the file in this section.
       # Print out the contents of the file, and then close the file.
+      f = open(FILE, r)
+      if (f.readline() == "" or f.readline() == null) :
+        print("No order has been placed.")
+      else: 
+        print(f.read())
+      f.close()
       
   if (mainSelect == 3) :
+    print("Thank you for shopping with Jay & the Whiteboyz LLC.")
     exit()
       
   else :
