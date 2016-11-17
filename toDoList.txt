@@ -1,0 +1,6 @@
+To Do List:
+
+- Create the Options() function
+-- Pass in the make and model as parameters, have the user select options, write all this to a file, and then close the file.
+- Finish option #2: 
+-- Open the file, print out the order, then close the file.
