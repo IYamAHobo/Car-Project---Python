@@ -103,7 +103,7 @@ def main():
       f.close()
       
   if (mainSelect == 3) :
-    print("Thank you for shopping with Jay & the Whiteboyz LLC.")
+    print("Thank you for shopping with Jay & the WhiteBoyz LLC.")
     exit()
       
   else :
