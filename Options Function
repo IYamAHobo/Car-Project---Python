@@ -14,43 +14,82 @@ def options(myBrand, myMake):
     
     prescriptionWindShield = ""
     
+    loop = 0
     
-    # should we wrap these in while loops to ensure users can't continue without making a proper choice?
-    if (invisibleHeadlights == ""):
-        option1 = input("Would you like to add Invisible Headlights to your vehicle? 'Yes' or 'No': ")
-        # try?
-        if (option1.lower() == "yes"):
-            print("Invisible Headlights added to vehicle.")
-            selection1 = "Invisible Headlights"
-        elif (option1.lower() == "no"):
-            print("")
-        else:
-            print("Could not understand your selection choice. Please try again.")
-            # add a way to force user back to top to make a choice on invisible headlights
-        # except?
-    
-    if (hydraulics == ""):
-        option2 = input("Would you like to add Hydraulics to your vehicle? 'Yes' or 'No': ")
-        if (option2.lower() == "yes"):
-            print("Hydraulics added to your vehicle.")
-            selection2 = "Hydraulics"
-        elif (option2.lower() == "no"):
-            print("")
-        else:
-            print("Could not understand your selection choice. Please try again.")
-            # add a way to force user back to top to make a choice on hydraulics
-    
-    if (prescriptionWindShield == ""):
-        option3 = input("Would you like to add a Prescription Wind Shield to your vehicle? 'Yes' or 'No': ")
-        if (option3.lower() == "yes"):
-            print("Prescription wind shield has been added to your vehicle.")
-            selection3 = "Prescription wind shield"
-        elif (option3.lower() == "no"):
-            print("")
-        else:
-            print("Could not understand your selection choice. Please try again.")
-            # add a way to force user back to top to make a choice on hydraulics
-    
+    while(loop > 5):
+     
+         # should we wrap these in while loops to ensure users can't continue without making a proper choice?
+         while(invisibleHeadlights == ""):
+             
+             try:
+               option1 = input("Would you like to add Invisible Headlights to your vehicle? 'Yes' or 'No': ")
+                  if (option1.lower() == "yes"):
+                      print("Invisible Headlights added to vehicle.")
+                      selection1 = "Invisible Headlights"
+                      loop +=1
+                      break()
+                  elif (option1.lower() == "no"):
+                      print("")
+                      loop +=1
+                      break()
+                  else:
+                      print("Could not understand your selection choice. Please try again.")
+                      # add a way to force user back to top to make a choice on invisible headlights
+             except ValueError as e:
+               print(e)
+
+         while (hydraulics == ""):
+             try:
+                  option2 = input("Would you like to add Hydraulics to your vehicle? 'Yes' or 'No': ")
+                  if (option2.lower() == "yes"):
+                      print("Hydraulics added to your vehicle.")
+                      selection2 = "Hydraulics"
+                      loop +=1
+                      break()
+
+                  elif (option2.lower() == "no"):
+                      print("")
+                      loop += 1
+                      break()
+                  else:
+                      print("Could not understand your selection choice. Please try again.")
+                      # add a way to force user back to top to make a choice on hydraulics
+               except ValueError as e:
+                    print(e)
+
+         while (prescriptionWindShield == ""):
+             try:
+                  option3 = input("Would you like to add a Prescription Wind Shield to your vehicle? 'Yes' or 'No': ")
+                  if (option3.lower() == "yes"):
+                      print("Prescription wind shield has been added to your vehicle.")
+                      selection3 = "Prescription wind shield"
+                      loop += 1
+                      break()
+                  elif (option3.lower() == "no"):
+                      print("")
+                      loop +=1 
+                      break()
+
+                  else:
+                      print("Could not understand your selection choice. Please try again.")
+                      # add a way to force user back to top to make a choice on hydraulics
+              except ValueError as e:
+               print(e)
+                      
+          print(" Are you satisfied with your selections:")
+          print(selection2, options2)
+          print(selction3, option3)
+          print(selction1, option1)
+          
+          try:
+               satisfaction = input("yes or no")
+               if(satisfaction.lower() == yes)
+                    loop = 6
+               else:
+                    print(" Try again")
+                    loop = 0
+          except:
+               print("I'm sorry enter yes or no)
     
     # Be able to pass in the make and model selections for writing to file.
     optionSelections = [selection1, "\n",
