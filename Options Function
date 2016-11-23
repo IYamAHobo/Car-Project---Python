@@ -1,0 +1,63 @@
+# Do we need to also pass the user's name as an argument to this function so it can be written to the file as well?
+def options(myBrand, myMake):
+     carFile = open("car_file.txt", "w")
+     carFile.write("Selected brand:", myBrand, "\n")
+     carFile.write("Selected make:", myMake, "\n")
+     carFile.write("Selected options:\n")
+     # carFile.close()
+     
+    
+    # Ask user to select car options. Use Boolean logic to confirm user selections.
+    invisibleHeadlights = ""
+    
+    hydraulics = ""
+    
+    prescriptionWindShield = ""
+    
+    
+    # should we wrap these in while loops to ensure users can't continue without making a proper choice?
+    if (invisibleHeadlights == ""):
+        option1 = input("Would you like to add Invisible Headlights to your vehicle? 'Yes' or 'No': ")
+        # try?
+        if (option1.lower() == "yes"):
+            print("Invisible Headlights added to vehicle.")
+            selection1 = "Invisible Headlights"
+        elif (option1.lower() == "no"):
+            print("")
+        else:
+            print("Could not understand your selection choice. Please try again.")
+            # add a way to force user back to top to make a choice on invisible headlights
+        # except?
+    
+    if (hydraulics == ""):
+        option2 = input("Would you like to add Hydraulics to your vehicle? 'Yes' or 'No': ")
+        if (option2.lower() == "yes"):
+            print("Hydraulics added to your vehicle.")
+            selection2 = "Hydraulics"
+        elif (option2.lower() == "no"):
+            print("")
+        else:
+            print("Could not understand your selection choice. Please try again.")
+            # add a way to force user back to top to make a choice on hydraulics
+    
+    if (prescriptionWindShield == ""):
+        option3 = input("Would you like to add a Prescription Wind Shield to your vehicle? 'Yes' or 'No': ")
+        if (option3.lower() == "yes"):
+            print("Prescription wind shield has been added to your vehicle.")
+            selection3 = "Prescription wind shield"
+        elif (option3.lower() == "no"):
+            print("")
+        else:
+            print("Could not understand your selection choice. Please try again.")
+            # add a way to force user back to top to make a choice on hydraulics
+    
+    
+    # Be able to pass in the make and model selections for writing to file.
+    optionSelections = [selection1, "\n",
+                        selection2, "\n",
+                        selection3, "\n"]
+    # carFile = ("car_file.txt", "a+")    reopen file if it was closed at the beginning of the function?
+    # carFile.write(optionSelections)
+    # carFile.close()
+    
+options()
