@@ -74,22 +74,26 @@ def options(myBrand, myMake):
                       print("Could not understand your selection choice. Please try again.")
                       # add a way to force user back to top to make a choice on hydraulics
               except ValueError as e:
-               print(e)
+                    print(e)
                       
           print(" Are you satisfied with your selections:")
           print(selection2, options2)
           print(selction3, option3)
           print(selction1, option1)
           
-          try:
-               satisfaction = input("yes or no")
-               if(satisfaction.lower() == yes)
-                    loop = 6
-               else:
-                    print(" Try again")
-                    loop = 0
-          except:
-               print("I'm sorry enter yes or no)
+          loop2 = 0
+          while(loop2 == 0)
+               try:
+                    satisfaction = input("yes or no")
+                    if(satisfaction.lower() == yes):
+                         loop = 6
+                         break()
+                    else:
+                         print(" Try again")
+                         loop = 0
+                         break()
+               except:
+                    print("I'm sorry enter yes or no)
     
     # Be able to pass in the make and model selections for writing to file.
     optionSelections = [selection1, "\n",
