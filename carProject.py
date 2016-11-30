@@ -4,8 +4,12 @@
 
 FILE = "car_file.txt"
 
-def options(myBrand, myMake, cost):
+def options(myBrand, myMake, cost, name):
     carFile = open(FILE, "w")
+    
+    carFile.write("Order for: ")
+    carFile.write(name)
+    carFile.write("\n")
     
     carFile.write(str(myBrand))
     carFile.write(" ")
@@ -111,6 +115,7 @@ def options(myBrand, myMake, cost):
     # Be able to pass in the make and model selections for writing to file.
     carFile = open(FILE, "a+")
     carFile.write(" with ")
+    carFile.write("\n")
     
     if (not hasHydraulics and not hasInvisibleHeadlights and not hasPrescriptionWindShield) :
         carFile.write("No add-ons")
@@ -121,9 +126,9 @@ def options(myBrand, myMake, cost):
     if (hasPrescriptionWindShield) :
         carFile.write("Prescription Windshield ")
         
-    carFile.write("($")
+    carFile.write("\n")
+    carFile.write("Total Cost: $")
     carFile.write(str(cost))
-    carFile.write(")")
     
     carFile.close()
     
@@ -170,6 +175,7 @@ def main():
             while (isPlacingOrder == True):
                 # Print your options for each car here.
                 # This will be where all the options, makers, and models will be chosen and displayed.
+                orderName = input("Please enter who this order is for")
                 print("myBrands")
                 print(''' 
                 1.) Chrysalis
@@ -196,15 +202,15 @@ def main():
                     if (Make == 1):
                         myMake = "Highwayman"
                         myCost = 40000
-                        options(myBrand, myMake, myCost)
+                        options(myBrand, myMake, myCost, orderName)
                     elif(Make == 2):
                         myMake = "RangeMaster"
                         myCost = 20000
-                        options(myBrand, myMake, myCost)
+                        options(myBrand, myMake, myCost, orderName)
                     elif(Make == 3):
                         myMake = "Pinto"
                         myCost = 15000
-                        options(myBrand, myMake, myCost)
+                        options(myBrand, myMake, myCost, orderName)
                 
                     print(" You chose a(n)", myBrand,":", myMake)
                     break
@@ -224,13 +230,16 @@ def main():
                     
                     if(myMake == 1):
                         myMake = "Hemoglobin"
-                        options(myBrand, myMake, myCost)
+                        myCost = 35000
+                        options(myBrand, myMake, myCost, orderName)
                     elif(myMake == 2):
                         myMake = "PX4"
-                        options(myBrand, myMake, myCost)
+                        myCost = 65000
+                        options(myBrand, myMake, myCost, orderName)
                     elif(myMake == 3):
                         myMake = "Misage"
-                        options(myBrand, myMake, myCost)
+                        myCost = 70000
+                        options(myBrand, myMake, myCost, orderName)
                     print("You chose a(n)", myBrand,":", myMake)
                     
                     isPlacingOrder = False
@@ -251,15 +260,15 @@ def main():
                     if(myMake == 1):
                         myMake = "Phenidate"
                         myCost = 50000
-                        options(myBrand, myMake, myCost)
+                        options(myBrand, myMake, myCost, orderName)
                     elif(myMake == 2):
                         myMake = "PCP GT500 XXX 30cc 12V 3rd Edition"
                         myCost = 75000
-                        options(myBrand, myMake, myCost)
+                        options(myBrand, myMake, myCost, orderName)
                     elif(myMake == 3):
                         myMake = "Muriatic"
                         myCost = 80000
-                        options(myBrand, myMake, myCost)
+                        options(myBrand, myMake, myCost, orderName)
                     print("You chose a(n)", myBrand, ":", myMake)
                     
                     isPlacingOrder = False
