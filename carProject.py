@@ -4,7 +4,7 @@
 
 FILE = "car_file.txt"
 
-def options(myBrand, myMake):
+def options(myBrand, myMake, cost):
     carFile = open(FILE, "w")
     
     carFile.write(str(myBrand))
@@ -33,6 +33,7 @@ def options(myBrand, myMake):
                 if (option1.lower() == "yes"):
                     print("Invisible Headlights added to vehicle.")
                     hasInvisibleHeadlights = True
+                    cost += 500
                     loop +=1
                     break
                 elif (option1.lower() == "no"):
@@ -50,6 +51,7 @@ def options(myBrand, myMake):
                 if (option2.lower() == "yes"):
                     print("Hydraulics added to your vehicle.")
                     hasHydraulics = True
+                    cost += 1000
                     loop +=1
                     break
 
@@ -68,6 +70,7 @@ def options(myBrand, myMake):
                 if (option3.lower() == "yes"):
                     print("Prescription wind shield has been added to your vehicle.")
                     hasPrescriptionWindShield = True
+                    cost += 2000
                     loop += 1
                     break
                 elif (option3.lower() == "no"):
@@ -117,6 +120,10 @@ def options(myBrand, myMake):
         carFile.write("Hydraulics ")
     if (hasPrescriptionWindShield) :
         carFile.write("Prescription Windshield ")
+        
+    carFile.write("($")
+    carFile.write(str(cost))
+    carFile.write(")")
     
     carFile.close()
     
@@ -188,13 +195,16 @@ def main():
                     
                     if (Make == 1):
                         myMake = "Highwayman"
-                        options(myBrand, myMake)
+                        myCost = 40000
+                        options(myBrand, myMake, myCost)
                     elif(Make == 2):
                         myMake = "RangeMaster"
-                        options(myBrand, myMake)
+                        myCost = 20000
+                        options(myBrand, myMake, myCost)
                     elif(Make == 3):
                         myMake = "Pinto"
-                        options(myBrand, myMake)
+                        myCost = 15000
+                        options(myBrand, myMake, myCost)
                 
                     print(" You chose a(n)", myBrand,":", myMake)
                     break
@@ -214,13 +224,13 @@ def main():
                     
                     if(myMake == 1):
                         myMake = "Hemoglobin"
-                        options(myBrand, myMake)
+                        options(myBrand, myMake, myCost)
                     elif(myMake == 2):
                         myMake = "PX4"
-                        options(myBrand, myMake)
+                        options(myBrand, myMake, myCost)
                     elif(myMake == 3):
                         myMake = "Misage"
-                        options(myBrand, myMake)
+                        options(myBrand, myMake, myCost)
                     print("You chose a(n)", myBrand,":", myMake)
                     
                     isPlacingOrder = False
@@ -240,13 +250,16 @@ def main():
                     
                     if(myMake == 1):
                         myMake = "Phenidate"
-                        options(myBrand, myMake)
+                        myCost = 50000
+                        options(myBrand, myMake, myCost)
                     elif(myMake == 2):
                         myMake = "PCP GT500 XXX 30cc 12V 3rd Edition"
-                        options(myBrand, myMake)
+                        myCost = 75000
+                        options(myBrand, myMake, myCost)
                     elif(myMake == 3):
                         myMake = "Muriatic"
-                        options(myBrand, myMake)
+                        myCost = 80000
+                        options(myBrand, myMake, myCost)
                     print("You chose a(n)", myBrand, ":", myMake)
                     
                     isPlacingOrder = False
