@@ -6,37 +6,36 @@ FILE = "car_file.txt"
 
 def options(myBrand, myMake):
     carFile = open(FILE, "w")
-    uselessString = "Selected myBrand:", str(myBrand), "\n"
-    carFile.write(str(uselessString))
-    uselessString = "Selected make:", str(myMake), "\n"
-    carFile.write(str(uselessString))
-    carFile.write("Selected options:\n")
+    
+    carFile.write(str(myBrand))
+    carFile.write(" ")
+    carFile.write(str(myMake))
+    
     carFile.close()
      
     
     # Ask user to select car options. Use Boolean logic to confirm user selections.
-    invisibleHeadlights = ""
+    hasInvisibleHeadlights = False
     
-    hydraulics = ""
+    hasHydraulics = False
     
-    prescriptionWindShield = ""
+    hasPrescriptionWindShield = False
     
     loop = 0
     
     while(loop < 5):
      
         # should we wrap these in while loops to ensure users can't continue without making a proper choice?
-        while(invisibleHeadlights == ""):
+        while(loop <= 0):
              
             try:
                 option1 = input("Would you like to add Invisible Headlights to your vehicle? 'Yes' or 'No': ")
                 if (option1.lower() == "yes"):
                     print("Invisible Headlights added to vehicle.")
-                    selection1 = "Invisible Headlights"
+                    hasInvisibleHeadlights = True
                     loop +=1
                     break
                 elif (option1.lower() == "no"):
-                    selection1 = ("Invisible Head lights")
                     loop +=1
                     break
                 else:
@@ -45,17 +44,16 @@ def options(myBrand, myMake):
             except ValueError as e:
                 print(e)
 
-        while (hydraulics == ""):
+        while (loop <= 1):
             try:
                 option2 = input("Would you like to add Hydraulics to your vehicle? 'Yes' or 'No': ")
                 if (option2.lower() == "yes"):
                     print("Hydraulics added to your vehicle.")
-                    selection2 = "Hydraulics"
+                    hasHydraulics = True
                     loop +=1
                     break
 
                 elif (option2.lower() == "no"):
-                    selection2 = ("Hydraulics")
                     loop += 1
                     break
                 else:
@@ -64,16 +62,15 @@ def options(myBrand, myMake):
             except ValueError as e:
                 print(e)
 
-        while (prescriptionWindShield == ""):
+        while (loop <= 2):
             try:
                 option3 = input("Would you like to add a Prescription Wind Shield to your vehicle? 'Yes' or 'No': ")
                 if (option3.lower() == "yes"):
                     print("Prescription wind shield has been added to your vehicle.")
-                    selection3 = "Prescription wind shield"
+                    hasPrescriptionWindShield = True
                     loop += 1
                     break
                 elif (option3.lower() == "no"):
-                    selection3 = ("Prescription Wind Shield")
                     loop +=1 
                     break
 
@@ -84,10 +81,13 @@ def options(myBrand, myMake):
                 print(e)
                       
         print("Are you satisfied with your selections:")
-        print(selection2, option2)
-        print(selection3, option3)
-        print(selection1, option1)
-        
+        if (hasInvisibleHeadlights):
+            print("Invisible Headlights")
+        if (hasHydraulics) :
+            print("Hydraulics")
+        if (hasPrescriptionWindShield) :
+            print("Prescription Windshield")
+         
         loop2 = 0
         while(loop2 == 0):
             try:
@@ -96,7 +96,7 @@ def options(myBrand, myMake):
                     loop = 6
                     break
                 elif (satisfaction.lower() == "no"):
-                    loop = 3
+                    loop = 0
                     break
                 else:
                     print("Try again")
@@ -106,11 +106,18 @@ def options(myBrand, myMake):
                 print("I'm sorry enter yes or no")
     
     # Be able to pass in the make and model selections for writing to file.
-    optionSelections = [selection1, "\n",
-                        selection2, "\n",
-                        selection3, "\n"]
-    carFile = open(FILE, "a+")    
-    carFile.write(str(optionSelections))
+    carFile = open(FILE, "a+")
+    carFile.write(" with ")
+    
+    if (not hasHydraulics and not hasInvisibleHeadlights and not hasPrescriptionWindShield) :
+        carFile.write("No add-ons")
+    if (hasInvisibleHeadlights) :
+        carFile.write("Invisible Headlights ")
+    if (hasHydraulics) :
+        carFile.write("Hydraulics ")
+    if (hasPrescriptionWindShield) :
+        carFile.write("Prescription Windshield ")
+    
     carFile.close()
     
 # End of options()
@@ -125,7 +132,7 @@ def main():
             f = open(FILE, "r")
         except:
             print("You need to make a new file. Creating...")
-            f = open(FILE, "r+")
+            f = open(FILE, "w")
         f.close()
             
         print("Please select your option:")
@@ -181,13 +188,13 @@ def main():
                     
                     if (Make == 1):
                         myMake = "Highwayman"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     elif(Make == 2):
                         myMake = "RangeMaster"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     elif(Make == 3):
                         myMake = "Pinto"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                 
                     print(" You chose a(n)", myBrand,":", myMake)
                     break
@@ -207,13 +214,13 @@ def main():
                     
                     if(myMake == 1):
                         myMake = "Hemoglobin"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     elif(myMake == 2):
                         myMake = "PX4"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     elif(myMake == 3):
                         myMake = "Misage"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     print("You chose a(n)", myBrand,":", myMake)
                     
                     isPlacingOrder = False
@@ -233,13 +240,13 @@ def main():
                     
                     if(myMake == 1):
                         myMake = "Phenidate"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     elif(myMake == 2):
                         myMake = "PCP GT500 XXX 30cc 12V 3rd Edition"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     elif(myMake == 3):
                         myMake = "Muriatic"
-                        options(myBrandSelect, myMake)
+                        options(myBrand, myMake)
                     print("You chose a(n)", myBrand, ":", myMake)
                     
                     isPlacingOrder = False
@@ -250,12 +257,10 @@ def main():
         if (mainSelect == 2) :
             # Read the file in this section.
             # Print out the contents of the file, and then close the file.
-            f = open(FILE, "r")
-            if (f.readline() == "" or f.readline() == None) :
-                print("No order has been placed.")
-            else: 
-                print(f.read())
-            f.close()
+            for line in open(FILE) :
+                if (line == "" or line == None):
+                    print("No order has been placed.")
+                print(line)
           
         if (mainSelect == 3) :
             print("Thank you for shopping with Jay & the WhiteBoyz LLC.")
