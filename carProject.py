@@ -109,7 +109,7 @@ def options(myBrand, myMake):
     optionSelections = [selection1, "\n",
                         selection2, "\n",
                         selection3, "\n"]
-    carFile = open("car_file.txt", "a+")    
+    carFile = open(FILE, "a+")    
     carFile.write(str(optionSelections))
     carFile.close()
     
@@ -123,10 +123,10 @@ def main():
         print("Welcome to the car program.")
         try:
             f = open(FILE, "r")
-            f.readline()
         except:
             print("You need to make a new file. Creating...")
             f = open(FILE, "r+")
+        f.close()
             
         print("Please select your option:")
         print("1) Place an order")
@@ -140,6 +140,7 @@ def main():
             
         # THE CAR SELECTION CODE STARTS HERE
         if (mainSelect == 1):
+            f = open(FILE, "w+")
             if (f.readline() != None or f.readline() != ""):
                 
                 try:
@@ -189,8 +190,8 @@ def main():
                         options(myBrandSelect, myMake)
                 
                     print(" You chose a(n)", myBrand,":", myMake)
-                    
-                    isPlacingOrder = False
+                    break
+                    #isPlacingOrder = False
                  
                 elif(myBrandSelect == 2):
                     myBrand = "Insignia"
@@ -260,7 +261,7 @@ def main():
             print("Thank you for shopping with Jay & the WhiteBoyz LLC.")
             exit()
           
-        else:
+        elif (mainSelect > 3 or mainSelect < 1):
             print("Invalid input. Please enter a number that corresponds to the related option.\n")
       
 main()
