@@ -3,6 +3,9 @@
 # Date: 11/30/2016
 # Instructor: Joe Bryan
 
+import os
+
+
 FILE = "car_file.txt"
 
 def options(myBrand, myMake, cost, name):
@@ -88,17 +91,18 @@ def options(myBrand, myMake, cost, name):
             except ValueError as e:
                 print(e)
                       
-        print("\nAre you satisfied with your selections?")
-        if (hasInvisibleHeadlights):
-            print("Invisible Headlights")
-        if (hasHydraulics) :
-            print("Hydraulics")
-        if (hasPrescriptionWindShield) :
-            print("Prescription Windshield")
+        
          
         loop2 = 0
         while(loop2 == 0):
             try:
+                print("\nAre you satisfied with your selections?")
+                if (hasInvisibleHeadlights):
+                    print("Invisible Headlights")
+                if (hasHydraulics) :
+                    print("Hydraulics")
+                if (hasPrescriptionWindShield) :
+                    print("Prescription Windshield")
                 satisfaction = input("\nEnter 'Yes' or 'No': ")
                 if(satisfaction.lower() == "yes"):
                     loop = 6
@@ -106,6 +110,8 @@ def options(myBrand, myMake, cost, name):
                 elif (satisfaction.lower() == "no"):
                     loop = 0
                     break
+                elif (satisfaction.lower() != "no" and satisfaction.lower() != "yes"):
+                    print("Invalid input. Please select an available option (Yes or no)")
                 else:
                     print("\nPlease try again.")
                     loop = 0
@@ -157,8 +163,9 @@ def main():
         
         try:
             mainSelect = int(input("\nEnter selection choice: "))
-        except:
+        except :
             print("Invalid input. Please enter a number that corresponds to the related option.\n")
+            continue
             
         # THE CAR SELECTION CODE STARTS HERE
         if (mainSelect == 1):
@@ -174,11 +181,20 @@ def main():
                 if (overwrite == 1):
                     isPlacingOrder = True
                 elif (overwrite == 2):
-                    return None
+                    continue
+                elif (overwrite >= 3 or overwrite <= 0):
+                    print("Invalid input. Please enter either 1 (yes) or 2 (no).")
+                    
+                    
             while (isPlacingOrder == True):
                 # Print your options for each car here.
                 # This will be where all the options, makers, and models will be chosen and displayed.
                 orderName = input("\nPlease enter a name for the order: ")
+                
+                if (orderName == ""):
+                    print("Invalid Input. Please enter a name.")
+                    continue
+                
                 print("\n\nManufacturer brands:")
                 print("1.) Chrysalis")
                 print("2.) Insignia")
@@ -188,6 +204,7 @@ def main():
                     myBrandSelect = int(input("\nPlease select a manufacturer brand (1 - 3): "))
                 except ValueError as e:
                     print("\nOops, Something Went Wrong: Select one of the myBrands (1 - 3)", e)
+                    break
             
             
                 if(myBrandSelect == 1):
@@ -200,8 +217,12 @@ def main():
               
                     try:              
                         Make = int(input("\nPlease select a vehicle model (1 - 3): "))
+                        if (Make >= 4 or Make <= 0):
+                            print("Please enter a valid input (1-3).")
+                            continue
                     except ValueError as e:
                         print(e)
+                        break
                     
                     if (Make == 1):
                         myMake = "Highwayman"
@@ -215,6 +236,9 @@ def main():
                         myMake = "Pinto"
                         myCost = 15000
                         options(myBrand, myMake, myCost, orderName)
+                    elif(Make >= 4 or Make <= 0) :
+                        print("Please enter a number which corresponds to a respective option (1-3).")
+                        continue
                 
                     print("\nYou chose a(n)", myBrand,":", myMake)
                     break
@@ -280,13 +304,15 @@ def main():
                     isPlacingOrder = False
                 
                 elif(myBrandSelect < 1 or myBrandSelect > 3): 
-                    print("You must select 1, 2, or 3.", ValueError)
+                    print("You must select 1, 2, or 3.")
               
         if (mainSelect == 2) :
             # Read the file in this section.
             # Print out the contents of the file, and then close the file.
             for line in open(FILE) :
-                if (line == "" or line == None):
+                if (os.path.getsize(FILE) > 0):
+                    print(line)
+                else :
                     print("No order has been placed.")
                 print(line)
           
