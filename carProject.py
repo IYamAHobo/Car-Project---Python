@@ -1,6 +1,7 @@
-# We'll use this as the main file we use for the program.
-# import os
-# You can use os.system("clear") to clear the screen on the program.
+# Authors: Jayveon Jackson, Esteban Valero, Elliot Flores
+# Project: Car Ordering Program
+# Date: 11/30/2016
+# Instructor: Joe Bryan
 
 FILE = "car_file.txt"
 
