@@ -151,6 +151,8 @@ def main():
         #print("Welcome to the car program.")
         try:
             f = open(FILE, "r")
+            for line in f :
+                print(line)
         except:
             print("You need to make a new file. Creating...")
             f = open(FILE, "w")
